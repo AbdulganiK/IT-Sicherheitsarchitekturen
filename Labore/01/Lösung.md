@@ -1,0 +1,1 @@
+Lösung des ersten Labors
