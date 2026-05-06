@@ -38,8 +38,7 @@ Crackmodi:
 ## Aufgabe 4
 
 _Welcher Schritt ist zunächst notwendig, um auf Linux-Distributionen, die Passwörter in einer_  
-_Shadow-Datei speichern, das Cracking der Passwortliste zu starten?_  
- 
+_Shadow-Datei speichern, das Cracking der Passwortliste zu starten?_  
 
 Als ersten Schritt muss der unshadow command ausgeführt werden, welcher dafür sorgt das die passwd (Benutzer) und shadow (Passwörter) Datei zusammengeführt werden und eine einzelne Hash Datei entsteht die gecracked wird von John the ripper.
 
@@ -153,7 +152,7 @@ _auch Domain-Passwörter auslesen?_
 **Domain-Passwörter** liegen im **Active Directory (NTDS.dit)** auf dem Domain Controller, nicht in der SAM.
 
 ```
-ophcrack -g -d /root/ophcrack -t vista_free,0,1,2 -f /root/ophcrack/win7-victim.pwdump
+ophcrack-cli -g -d /root/ophcrack -t vista_proba_free,0,1,2 -f /root/ophcrack/win7-victim2.pwdump
 ```
 
 ---
