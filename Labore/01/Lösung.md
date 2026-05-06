@@ -189,4 +189,21 @@ ophcrack-cli -g -d /root/ophcrack -t vista_proba_free,0,1,2 -f /root/ophcrack/wi
 
 *   Steht für **„file"**
 *   Die **Eingabedatei** mit den Windows-Passwort-Hashes
-*   Das `.pwdump`\-Format sieht so aus:
+*   Das `.pwdump`\-Format sieht so aus
+
+Ergebnis des Befehls:
+
+```
+1 hashes have been found in /root/ophcrack/win7-victim2.pwdump. 
+Opened 3 table(s) from /root/ophcrack/vista_proba_free,0,1,2.
+0h  0m 29s; Found password 12!34 for user Alice (NT hash #0) in table Vista probabilistic free #1 at column 30146.
+0h  0m 33s; search (100%); tables: total 3, done 3, using 0; pwd found 1/1.
+
+Results:
+
+username / hash                  LM password    NT password
+Alice   
+
+
+                                \*\*\* empty \*\*\*  12!34
+```
