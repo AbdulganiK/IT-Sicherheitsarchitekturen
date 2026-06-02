@@ -1,0 +1,83 @@
+Notizen COMARCH 07.Mai
+
+Erste Vorlesung
+
+- Load instruction hat höchsten Delay
+- allgemeiner Fall soll am schnellsten sein (Rechnen und Schreiben)
+- Branch und Jump am schnellsten bei 1-Takt Prozessor
+- Lösung dafür ist Pipelining
+
+Pipelining
+- Wäsche Waschen
+- alles hintereinander 8 Stunden bei 4 Iterationen
+- anderen Sachen warten alle
+
+- die wartenden Sachen ausnutzen und direkt die neue Wäsche rein tun (Schrank, Waschmaschine, usw)
+- speedup faktor von 2.3 insgesamt nur noch 4 Stunden
+- Bedingungen für den Speedup ist dass alle sachen gleichlang dauern es geht nur wenn alle Komponenten Schrank etc gleich lang dauert
+
+CPU wird in 5 unterschritte unterteilt:
+- IF: instruction fetch
+- ID: instruction deocde
+- EX: execute Alu operation
+- MEM: Access Memory Operand (Lesen oder Schreiben)
+- WB: Berechnung vom Execute wird zurück geschrieben
+
+Lesen und Schreiben wird in zwei Schritten verwendet oben. Daher wird Load instruction auf zwei Takte aufgeteilt einmal auf steigende und einmal auf fallende Flanke
+
+Laden wird nicht besser bei Pipelining da zusätzliche Hardware benötigt wird.
+Durschnittliche Zeit der Instructionen wird deutlich besser
+
+Man kann laden order rechnen bei MIPS Architektur => extra so ausgelegt wegen Pipelining 
+Daher auch Instruction Memory und Data Memory auch getrennt
+
+Struktureller Konflikt:
+- seperater Daten und Adressregister
+
+Problem aus Register lesen was noch nicht geschrieben wurden
+
+No Operatione zum Warten der Takte bei Zugriffskonflikten
+
+
+Bedingter Sprung und der Sprung wird angenommen muss zwei mal gewartet werden
+Beheben mit einem Branch Delay Slot aka den Sprung vorziehen
+wenn man nicht weiß was man tun soll zwei mal no operation
+andere Möglichkeit ist anzunehmen das der Sprung fehlschlägt und normal weiter zu rechnen und im nachhinein die Daten zu löschen
+
+
+
+
+Zweite Vorlesung weil zu schnell
+
+- ältester Befehl steht ganz hinten bei Pipelining
+- zusätzlihce pipeline controls
+
+
+
+
+Übung:
+
+3. Wenn wir eine Stufe eines Datenpfads mit Pipielining in zwei neue Stufen aufteilen könnten, von denen jede die halbe Latenz der ursprünglichen Stufe hat, welche Stufe würden sie nehmen. => Instruction Decode
+
+4. Angenommen keine Leerläufe oder Konflikte. Wie ist dann die Auslastung des Datenspeichers? => 35%
+
+5. Angenommen, es gibt keine Leerläufe oder Konflikte. Wie ist dann die Auslastung des Schreibregister-Prts der Registereinheit? => Alu + lw = 45% + 20%
+
+6. Anstatt einer Einzeltaktorganisation..
+
+=> 
+Pipelining: Takzeit 550 ps, Latenz 2750ps
+Einzeltakt 1250 ps, Latenz 1250 ps
+Mehrtakt (gleiche Taktlänge): Taktzeit 350 ps, Latenz alu 4 * 350 ps beq 3 *350 ps lw 5* 350 ps sw 4 * 350 ps durschnitt .45 * 4 * 350 + .2*3*350 + 15 * 4 * 350 = 1400 ps
+
+7. 
+
+
+
+
+
+
+
+
+
+
