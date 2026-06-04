@@ -41,9 +41,9 @@ Das **Principle of Least Privilege** (Prinzip der minimalen Rechtevergabe) besag
 
 ## Aufgabe 5
 
-**Meterpreter** ist ein fortschrittlicher Metasploit-Payload, der komplett im Arbeitsspeicher des Zielsystems läuft und einem Angreifer mächtige, schwer entdeckbare Funktionen zur interaktiven Fernsteuerung bietet.
+**Meterpreter** ist ein fortschrittlicher Metasploit-Payload, der komplett im Arbeitsspeicher des Zielsystems läuft und einem Angreifer mächtige, schwer entdeckbare Funktionen zur interaktiven Fernsteuerung bietet. Startet eine Reverse Shell womit der restliche Schadcode hinein geladen werden kann. Es baut eine veschlüsselte Verbindung auf. Beinhaltet viele Host-Exploitations. 
 
-Der wesentliche Unterschied ist, dass ein **Staged Payload** in zwei Schritten arbeitet und zuerst einen winzigen "Stager" schickt, der den eigentlichen Schadcode nachlädt, während ein **Non-Staged Payload** (Inline) den gesamten Schadcode in einem einzigen, größeren Paket direkt an das Zielsystem sendet.
+Der wesentliche Unterschied ist, dass ein **Staged Payload** in zwei Schritten arbeitet und zuerst einen winzigen "Stager" schickt, der den eigentlichen Schadcode nachlädt, während ein **Non-Staged Payload** (Inline) den gesamten Schadcode in einem einzigen, größeren Paket direkt an das Zielsystem sendet. Vorteil von zwei Schritten ist das vermeiden eines Bufferoverflows.
 
 ## Aufgabe 6
 
@@ -376,3 +376,5 @@ Ja, es wird eine Ausgabe angezeigt. Das Format sieht z. B. so aus:
 *   Alarmmeldung (`msg`)
 *   Protokoll
 *   Quell- und Ziel-IP-Adresse
+
+snort -q -Q --daq afpacket -A /etc../snort.conf eth0:eth1
